@@ -6,8 +6,8 @@
 //////////////////////////////////////////////////
 //Cambiar en función del Peer que sube el código//
 //////////////////////////////////////////////////
-uint8_t PeerActual = 1; // Peer E1
-// uint8_t PeerActual = 2; // Peer E2
+// uint8_t PeerActual = 1; // Peer E1
+uint8_t PeerActual = 2; // Peer E2
 //////////////////////////////////////////////////
 
 //uint8_t mac_broadcast[] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff}
@@ -21,11 +21,10 @@ uint8_t mac_addr_E2[] = {0xB8, 0xD6, 0x1A, 0xAC, 0x03, 0x60};
 esp_now_peer_info_t peerInfo_E1;
 esp_now_peer_info_t peerInfo_E2;
 
+String buffer;
 
 typedef struct struct_message {
-    int numero;
-    float flotante;
-    char letra;
+  char texto[250];
 } struct_message;
 
 struct_message esp_buffer_tx;
@@ -61,7 +60,7 @@ void setup()
   memcpy(peerInfo_E1.peer_addr, mac_addr_E1, sizeof(mac_addr_E1));
   peerInfo_E1.channel = 1;
   peerInfo_E1.encrypt = false; // Configurar cifrado según tus necesidades
-
+  
   // Configurar la estructura peerInfo_E2 con la información de E2
   memcpy(peerInfo_E2.peer_addr, mac_addr_E2, sizeof(mac_addr_E2));
   peerInfo_E2.channel = 1;
@@ -79,14 +78,31 @@ void setup()
     return;
   }
 
+
+  
+  if (PeerActual == 1) 
+  {  
+      for (int i=0; i < 249 ;i++) {
+        buffer += char(random(91)+31);
+      }
+      buffer.toCharArray(esp_buffer_tx.texto, sizeof(esp_buffer_tx.texto));
+  }
   Serial.print("PEER ACTUAL -> E");
   Serial.println(PeerActual);
+  Serial.println("Texto a enviar:");
+  Serial.println(esp_buffer_tx.texto);
+  Serial.print("Tamaño -> ");
+  Serial.println(sizeof(esp_buffer_tx));
 }
 
 void loop()
-{
+{ 
   if (PeerActual == 1) 
   {  
+      // for (int i=0; i < sizeof(esp_buffer_tx.numero_aleatorio);i++) {
+      //   cadena += char(random(256);
+      // }
+
       if( flag_recv || flag_resend )
       { 
         t_0 = esp_timer_get_time(); //idem 
