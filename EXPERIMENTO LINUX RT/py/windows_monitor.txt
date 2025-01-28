@@ -1,0 +1,6 @@
+> netsh wlan show wirelesscapabilities
+
+Buscar "Modo de monitor de red : compatible" y usar nombre de adaptador Wi-Fi
+Puede no ser compatible debido a los Drivers disponibles para Npcap
+
+> ./system32/Npcap/WlanHelper.exe "Wi-Fi" mode monitor

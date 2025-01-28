@@ -1,0 +1,56 @@
+Configuración para ESP32-S3
+
+Lista Jugadores:
+- A1: 7c:df:a1:ff:2b:30
+- A2: 68:b6:b3:21:09:e8 - CARRIER INICIAL
+- B1: b8:d6:1a:ab:4d:8c
+- B2: b8:d6:1a:ac:03:60
+- M0: ec:da:3b:45:2c:d0 - MAESTRO - PEER ACTUAL
+
+Agregando jugador 1...OK
+Agregando jugador 2...OK
+Agregando jugador 3...OK
+Agregando jugador 4...OK
+Agregando Broadcast...OK
+
+Estado jugador A1...
+Sin Respuesta
+Estado jugador A2...
+Sin Respuesta
+Estado jugador B1...
+Sin Respuesta
+Estado jugador B2...
+Sin Respuesta
+
+No todos los agentes están en linea
+Problemas en la ejecución, por favor reinicie manualmente el dispositivo para reintentar.
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3818,len:0x109c
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xb50
+load:0x403cc700,len:0x2fe4
+entry 0x403c98ac
+E (204) esp_core_dump_flash: Core dump data check failed:
+Configuración para ESP32-S3
+
+Lista Jugadores:
+- A1: 7c:df:a1:ff:2b:30
+- A2: 68:b6:b3:21:09:e8 - CARRIER INICIAL
+- B1: b8:d6:1a:ab:4d:8c
+- B2: b8:d6:1a:ac:03:60
+- M0: ec:da:3b:45:2c:d0 - MAESTRO - PEER ACTUAL
+
+Agregando jugador 1...OK
+Agregando jugador 2...OK
+Agregando jugador 3...OK
+Agregando jugador 4...OK
+Agregando Broadcast...OK
+
+Estado jugador A1...
+Sin Respuesta
+Estado jugador A2...
+Sin Respuesta
